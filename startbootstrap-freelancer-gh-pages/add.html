@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter une offre de voyage</title>
+    <link rel="stylesheet" href="body.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Ajouter une offre de voyage</h1>
+        <form id="addTravelOfferForm">
+            <label for="title">Titre de l'offre</label>
+            <input type="text" id="title" name="title" required minlength="3" placeholder="Entrez le titre de l'offre" aria-describedby="titleHelp">
+            <small id="titleHelp" class="form-text">Le titre est obligatoire (minimum 3 caractères).</small>
+
+            <label for="destination">Destination</label>
+            <input type="text" id="destination" name="destination" required pattern="[A-Za-z\s]{3,}" placeholder="Entrez la destination" aria-describedby="destinationHelp">
+            <small id="destinationHelp" class="form-text">La destination doit comporter au minimum 3 caractères et ne contenir que des lettres et des espaces.</small>
+
+            <label for="departureDate">Date de départ</label>
+            <input type="date" id="departureDate" name="departureDate" required aria-describedby="departureDateHelp">
+            <small id="departureDateHelp" class="form-text">La date de départ est obligatoire.</small>
+
+            <label for="returnDate">Date de retour</label>
+            <input type="date" id="returnDate" name="returnDate" required aria-describedby="returnDateHelp">
+            <small id="returnDateHelp" class="form-text">La date de retour est obligatoire.</small>
+
+            <label for="price">Prix</label>
+            <input type="number" id="price" name="price" required min="0" step="0.01" placeholder="Entrez le prix" aria-describedby="priceHelp">
+            <small id="priceHelp" class="form-text">Le prix doit être un nombre entier positif ou décimal.</small>
+
+            <label for="category">Catégorie</label>
+            <select id="category" name="category" required aria-describedby="categoryHelp">
+                <option value="">Sélectionner une catégorie</option>
+                <option value="vacation">Vacances</option>
+                <option value="adventure">Aventure</option>
+                <option value="romantic">Romantique</option>
+                <option value="family">Familial</option>
+            </select>
+            <small id="categoryHelp" class="form-text">Choisissez une catégorie parmi celles proposées.</small>
+
+            <button type="submit">Ajouter l'offre</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("addTravelOfferForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            // Ajoutez ici le traitement pour soumettre le formulaire
+            alert("Offre de voyage ajoutée !");
+        });
+    </script>
+</body>
+</html>
